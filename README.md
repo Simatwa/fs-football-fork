@@ -30,11 +30,6 @@ This is a fork of [progeroffline/fs-football](https://github.com/progeroffline/f
   - [HistoryMatch](#historymatch)
   - [Match](#match)
 
-## Languages
-
-- [🇺🇸 English](README.md)
-- [🇺🇦 Ukrainian](README-ua.md)
-
 ## Overview
 
 This Python library allows you to easily fetch data about football matches from the FlashScore website (flashscore.com). It is designed for asynchronous operation, providing fast and efficient data retrieval. In some parts of the library, the `grequests` library is used to enhance performance.
