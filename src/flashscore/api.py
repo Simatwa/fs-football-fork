@@ -1,9 +1,10 @@
 import json
 
-from . import converter
-from .base import Base
-from .country import Country
-from .match import Match
+from flashscore import converter
+from flashscore.base import Base
+from flashscore.country import Country
+from flashscore.exceptions import CountryNotFoundError
+from flashscore.match import Match
 
 
 class FlashscoreApi(Base):
@@ -32,6 +33,23 @@ class FlashscoreApi(Base):
                 )
 
         return sorted(countries, key=lambda country: country.id)
+
+    def get_country_by_name(self, country_name: str) -> Country:
+        target_country_name = country_name.lower()
+
+        country_name_items = set()
+
+        for country in self.get_countries():
+            if country.name.lower() == target_country_name:
+                return country
+
+            country_name_items.add(country.name)
+
+        raise CountryNotFoundError(
+            country_name_items,
+            f'Country matching the name "{country_name}" does not exist. '
+            f"Choose from {country_name_items}",
+        )
 
     def get_today_matches(self, day: int | None = 0) -> list[Match]:
         today_matches_gzip = self.make_request(

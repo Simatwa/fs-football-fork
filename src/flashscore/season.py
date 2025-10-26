@@ -1,6 +1,6 @@
-from . import converter
-from .base import Base
-from .match import Match
+from flashscore import converter
+from flashscore.base import Base
+from flashscore.match import Match
 
 
 class Season(Base):

@@ -1,7 +1,7 @@
 from flashscore import converter
-
-from .base import Base
-from .league import League
+from flashscore.base import Base
+from flashscore.exceptions import LeagueNotFoundError
+from flashscore.league import League
 
 
 class Country(Base):
@@ -40,4 +40,20 @@ class Country(Base):
                 if "MN" in league.keys()
             ],
             key=lambda league: league.name,
+        )
+
+    def get_league_by_name(self, league_name: str) -> League:
+        league_name_items = set()
+        target_league_name = league_name.lower().strip()
+
+        for league in self.get_leagues():
+            if league.name.lower() == target_league_name:
+                return league
+
+            league_name_items.add(league.name)
+
+        raise LeagueNotFoundError(
+            league_name_items,
+            f'There\'s no league matching the name "{league_name}". '
+            f"Choose from {league_name_items}",
         )

@@ -1,5 +1,5 @@
-from .base import Base
-from .season import Season
+from flashscore.base import Base
+from flashscore.season import Season
 
 
 class League(Base):

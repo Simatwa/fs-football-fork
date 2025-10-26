@@ -5,8 +5,7 @@ from datetime import datetime
 from typing import Any
 
 from flashscore import converter
-
-from .base import Base
+from flashscore.base import Base
 
 
 @dataclass()
