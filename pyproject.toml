@@ -1,5 +1,5 @@
 [project]
-name = "fs-football"
+name = "fs-football-fork"
 version = "0.1.0"
 description = "Fetch football data from FlashScore.com."
 readme = "README.md"
@@ -47,9 +47,9 @@ dependencies = [
 ]
 
 [project.urls]
-homepage = "https://github.com/Simatwa/fs-football"
-repository = "https://github.com/Simatwa/fs-football"
-documentation = "https://github.com/Simatwa/fs-football"
+homepage = "https://github.com/Simatwa/fs-football-fork"
+repository = "https://github.com/Simatwa/fs-football-fork"
+documentation = "https://github.com/Simatwa/fs-football-fork"
 
 [build-system]
 requires = ["hatchling"]
