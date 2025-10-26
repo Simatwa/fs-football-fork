@@ -1,4 +1,21 @@
+<div align="center">
+
 # FlashScore Football Library
+
+**Unofficial Python wrapper for flashscore.com**
+
+[![PyPI version](https://badge.fury.io/py/fs-football-fork.svg)](https://pypi.org/project/fs-football-fork)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/fs-football-fork)](https://pypi.org/project/fs-football-fork)
+![Coverage](https://raw.githubusercontent.com/Simatwa/fs-football-fork/refs/heads/main/assets/coverage.svg)
+[![PyPI - License](https://img.shields.io/pypi/l/fs-football-fork)](https://pypi.org/project/fs-football-fork)
+[![Downloads](https://pepy.tech/badge/fs-football-fork)](https://pepy.tech/project/fs-football-fork)
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+
+[Overview](#overview) • [Installation](#installation) • [Available Classes](#available-classes) • [Usage](#-usage)
+</div
+
+> [!NOTE]
+> This is a fork of [progeroffline/fs-football](https://github.com/progeroffline/fs-football)
 
 ## Table of Contents
 
@@ -13,7 +30,6 @@
   - [Event](#event)
   - [HistoryMatch](#historymatch)
   - [Match](#match)
-- [👤 Author](#author)
 
 ## Languages
 
@@ -134,10 +150,4 @@ Represents a match, including its details and statistics.
   - `away_matches`: A list of historical matches for the away team.
   - `head2head_matches`: A list of historical matches between these two teams.
 
-## Author
 
-- GitHub: [progeroffline](https://github.com/progeroffline)
-
-If you have any questions or issues, please feel free to open GitHub issues.
-
-Happy parsing! 🚀📈
