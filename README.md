@@ -11,7 +11,7 @@
 [![Downloads](https://pepy.tech/badge/fs-football-fork)](https://pepy.tech/project/fs-football-fork)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 
-[Overview](#overview) • [Installation](#installation) • [Available Classes](#available-classes) • [Usage](#-usage)
+[Overview](#overview) • [Installation](#installation) • [Usage](#-usage)
 
 This is a fork of [progeroffline/fs-football](https://github.com/progeroffline/fs-football)
 </div
