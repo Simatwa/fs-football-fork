@@ -1,0 +1,94 @@
+[project]
+name = "fs-football"
+version = "0.1.0"
+description = "Fetch football data from FlashScore.com."
+readme = "README.md"
+license="Unlicense"
+authors = [
+    { name = "smartwa", email = "smartwacaleb@gmail.com" }
+]
+requires-python = ">=3.10"
+classifiers = [
+    "License :: OSI Approved :: The Unlicense (Unlicense)",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Communications :: File Sharing",
+]
+dependencies = [
+    "about-time>=4.2.1",
+    "aiohttp>=3.8.5",
+    "aiosignal>=1.3.1",
+    "alive-progress>=3.1.4",
+    "async-timeout>=4.0.3",
+    "attrs>=23.1.0",
+    "beautifulsoup4>=4.12.2",
+    "bs4>=0.0.1",
+    "certifi>=2023.7.22",
+    "charset-normalizer>=3.2.0",
+    "frozenlist>=1.4.0",
+    "gevent>=23.9.1",
+    "grapheme>=0.6.0",
+    "greenlet>=3.0.0rc3",
+    "grequests>=0.7.0",
+    "idna>=3.4",
+    "multidict>=6.0.4",
+    "requests>=2.31.0",
+    "soupsieve>=2.5",
+    "urllib3>=2.0.5",
+    "yarl>=1.9.2",
+    "zope-event>=5.0",
+    "zope-interface>=6.0",
+]
+
+[project.urls]
+homepage = "https://github.com/Simatwa/fs-football"
+repository = "https://github.com/Simatwa/fs-football"
+documentation = "https://github.com/Simatwa/fs-football"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/flashscore"]
+
+[dependency-groups]
+dev = [
+    "coverage>=7.10.4",
+    "coverage-badge>=1.1.2",
+    "pytest>=8.4.1",
+    "pytest-asyncio>=1.0.0",
+    "ruff>=0.12.8",
+]
+
+[tool.ruff]
+preview = true
+line-length = 85
+
+[tool.ruff.lint]
+select = [
+    "E",      # https://docs.astral.sh/ruff/rules/#error-e
+    "F",      # https://docs.astral.sh/ruff/rules/#pyflakes-f
+    "I",      # https://docs.astral.sh/ruff/rules/#isort-i
+    "FA",     # https://docs.astral.sh/ruff/rules/#flake8-future-annotations-fa
+    "UP",     # https://docs.astral.sh/ruff/rules/#pyupgrade-up
+    "RUF100", # https://docs.astral.sh/ruff/rules/#ruff-specific-rules-ruf
+]
+extend-select =     [
+    "UP045",
+    "UP035",
+]
+
+ignore = [
+    "UP031",  # https://docs.astral.sh/ruff/rules/printf-string-formatting/
+    "F401"    # https://docs.astral.sh/ruff/rules/unused-import
+]
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
