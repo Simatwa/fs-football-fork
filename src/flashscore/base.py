@@ -3,6 +3,7 @@ import asyncio
 import grequests
 import requests
 from aiohttp import ClientSession
+from flashscore.converter import gzip_to_json
 
 
 class Base:
@@ -82,7 +83,13 @@ class Base:
         }
 
     def make_request(self, url: str) -> requests.Response:
-        return requests.get(url, headers=self._headers)
+        resp = requests.get(url, headers=self._headers)
+        resp.raise_for_status()
+        return resp
+
+    def make_request_and_decode(self, url: str) -> dict:
+        response = self.make_request(url)
+        return gzip_to_json(response.text)
 
     def make_grequest(self, urls: list[str]) -> list[requests.models.Response]:
         result = grequests.map(

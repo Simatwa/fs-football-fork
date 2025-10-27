@@ -160,6 +160,6 @@ cython_debug/
 #.idea/
 
 # Only for project. This files i'm create for test or other thins, but this files don't exists in repo.
-test.py
+test*.py
 database/
 make_season_db_dump.py

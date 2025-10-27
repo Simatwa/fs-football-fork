@@ -1,3 +1,6 @@
+import json
+
+
 def inspect(func: callable) -> callable:
     def decorator(data_str):
         resp = func(data_str)
@@ -5,6 +8,13 @@ def inspect(func: callable) -> callable:
         return resp
 
     return decorator
+
+
+def try_to_load_json(data: str) -> dict | list | str:
+    try:
+        return json.loads(data)
+    except json.JSONDecodeError:
+        return data
 
 
 # @inspect
@@ -28,9 +38,9 @@ def gzip_to_json(gzip: str) -> list[dict]:
                 key, value = param.split("·")
 
             if item_data.get(key) is None:
-                item_data[key] = value
+                item_data[key] = try_to_load_json(value)
             else:
-                item_data[f"{key}_2"] = value
+                item_data[f"{key}_2"] = try_to_load_json(value)
 
         json_result.append(item_data)
     return json_result
