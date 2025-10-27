@@ -69,7 +69,7 @@ class Season(Base):
             for match_id in matches_ids
         ]
 
-    def get_matches_with_alreday_loaded_content(self) -> list[Match]:
+    def get_matches_with_already_loaded_content(self) -> list[Match]:
         matches = self.get_matches()
         urls = []
         for match in matches:

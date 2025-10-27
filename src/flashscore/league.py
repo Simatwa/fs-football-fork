@@ -1,4 +1,5 @@
 from flashscore.base import Base
+from flashscore.exceptions import SeasonNotFoundError
 from flashscore.season import Season
 
 
@@ -120,3 +121,18 @@ class League(Base):
             )
             for id, title in zip(seasons_ids, seasons_titles)
         ]
+
+    def get_season_by_title(self, title: str) -> Season:
+        season_title_items = set()
+
+        for season in self.get_seasons():
+            if season.title == title:
+                return season
+
+            season_title_items.add(season.title)
+
+        raise SeasonNotFoundError(
+            season_title_items,
+            f'There\'s no season matching the title "{title}". '
+            f"Choose from {season_title_items}",
+        )

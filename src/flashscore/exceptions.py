@@ -14,3 +14,10 @@ class CountryNotFoundError(FlashScoreException):
         self.available_countries = available_countries
 
         super().__init__(*args, **kwargs)
+
+
+class SeasonNotFoundError(FlashScoreException):
+    def __init__(self, available_titles: set[str], *args, **kwargs):
+        self.available_titles = available_titles
+
+        super().__init__(*args, **kwargs)
